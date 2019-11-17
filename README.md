@@ -6,7 +6,7 @@
 
 ### 实现原理：
 
-![Image text](https://raw.githubusercontent.com/752848087coder/img-folder/master/20191117141211581.png?token=AHLOPSMU2UQE2ZLFYGVUKDS52DWY2)
+![Image text](http://129.226.125.49/images/recycleScroller.png)
 
 最外层recycle-scroller节点需要设置一个固定高度，它代表可视区域。
 中间层recycle-scroller-holder节点高度为渲染所有数据的总高度，它目的在于撑出recycle-scroller的滚动条。
