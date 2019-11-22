@@ -1,17 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>复用滚动组件demo</h1>
+    <RecycleScroller 
+      :list="list" 
+      scrollItemKey="key"
+    >
+      <!-- 组件插槽会返回当前内容item，可自定义滚动内容 -->
+      <template v-slot="props">
+       {{ props.item.value }}
+      </template>
+    </RecycleScroller>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import RecycleScroller from './components/RecycleScroller.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    RecycleScroller
+  },
+  data() {
+    return {
+      list: []
+    };
+  },
+  created() { // 生成模拟数据
+    this.list = Array.from(Array(1000), (v,k) => {
+      return {
+        value: k,
+        key: k
+      }
+    });
   }
 }
 </script>
@@ -23,6 +44,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
