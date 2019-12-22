@@ -6,7 +6,7 @@
 
 ### 实现原理：
 
-![Image text](http://129.226.125.49/images/recycleScroller.png)
+![Image text](http://gavincat.cn:8080/recycleScroller.png)
 
 最外层recycle-scroller节点需要设置一个固定高度，它代表可视区域。
 
