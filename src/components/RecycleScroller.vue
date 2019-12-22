@@ -10,8 +10,8 @@
       >
         <div 
           class="recycle-scroller-item" 
-          :style="{'height': `${itemHeight}px`, 'line-height': `${itemHeight}px`}" 
-          v-for="(item, index) in showList" :key="item[scrollItemKey] || index"
+          :style="{'height': `${itemHeight}px`}" 
+          v-for="(item, index) in showList" :key="item[itemKey] || index"
         >
           <slot
             :item="item"
@@ -28,21 +28,23 @@ export default {
   props: {
     list: { // 需要渲染的数据
       type: Array,
-      'default': [],
+      default: () => {
+        return [];
+      },
       require: true
     },
-    scrollItemKey: { // 数组的唯一标识字段，可以很大程度提升性能
+    itemKey: { // 数组的唯一标识字段，可以很大程度提升性能
       type: String,
-      'default': 'id',
+      default: 'id',
       require: true
     },
     itemHeight: { // 每条数据的高度
       type: Number,
-      'default': 40     
+      default: 40     
     },
     viewHeight: { // 可视区域高度
       type: Number,
-      'default': 600  
+      default: 600  
     }
   },
   data() {
@@ -60,7 +62,7 @@ export default {
     this.update();
   },
   methods: {
-    update() { // 计算更新当前显示的数组数据
+    update() { // 更新当前显示的数组数据
       let scrollTop = this.$refs['recycleScroller'].scrollTop;
       let viewNum = Math.ceil(this.viewHeight / this.itemHeight); // 可视区域可显示的最多条数
       let showStart = Math.floor(scrollTop / this.itemHeight); // 可视区域显示的第一数据下标
@@ -79,10 +81,16 @@ export default {
   position: relative;
   overflow: auto;
 }
+
 .recycle-scroller-holder, .recycle-scroller-wrapper{
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+.recycle-scroller-item{
+  display: flex;
+  align-items: center;
 }
 
 </style>
