@@ -8,10 +8,10 @@
 
 参数 | 说明 | 类型 | 必填 | 默认值 |  
 -|-|-|-|-|
-list | 需要渲染的数据 | Array | [x] |-|
-itemKey | 数组的唯一标识字段，可以很大程度提升渲染性能 | String | [x] |-|
-itemHeight | 每条数据的高度 | Number | [ ]  | 40 |
-viewHeight | 可视区域高度 | Number | [ ]  | 600 
+list | 需要渲染的数据 | Array | 是 |-|
+itemKey | 数组的唯一标识字段，可以很大程度提升渲染性能 | String | 是 |-|
+itemHeight | 每条数据的高度 | Number | 否 | 40 |
+viewHeight | 可视区域高度 | Number | 否 | 600 
 ### 实现原理：
 
 ![Image text](http://gavincat.cn:8080/recycleScroller.png)
