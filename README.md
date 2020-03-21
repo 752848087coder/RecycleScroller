@@ -14,8 +14,6 @@ itemHeight | 每条数据的高度 | Number | 否 | 40 |
 viewHeight | 可视区域高度 | Number | 否 | 600 
 ### 实现原理：
 
-![Image text](http://gavincat.cn:8080/recycleScroller.png)
-
 最外层recycle-scroller节点需要设置一个固定高度，它代表可视区域。
 
 中间层recycle-scroller-holder节点高度为渲染所有数据的总高度，它目的在于撑出recycle-scroller的滚动条。
