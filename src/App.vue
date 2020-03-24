@@ -5,7 +5,7 @@
       :list="list" 
       itemKey="key"
       :itemHeight = "60"
-      :viewHeight = "500"
+      :viewHeight = "600"
     >
       <!-- 组件插槽会返回当前内容item，可自定义滚动内容 -->
       <template v-slot="props">

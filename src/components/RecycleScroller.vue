@@ -25,6 +25,12 @@
 <script>
 export default {
   name: 'RecycleScroller',
+  watch: {
+    // 当传入的数据发生变化时，需要重新渲染数据
+    list() {
+      this.update();
+    }
+  },
   props: {
     list: { // 需要渲染的数据
       type: Array,
